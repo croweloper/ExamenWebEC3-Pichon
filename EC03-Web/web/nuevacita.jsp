@@ -18,22 +18,17 @@
         String codmed=request.getParameter("codmed");
         String ultimacita="";
         
-        
         try{
-                
-                List list=SQL.sqlConsulta("call sp_ObtenerUltimaCita();"); 
-                    if (list!=null) {
-                        for (int i = 0; i < list.size(); i++) {
-                            Object[] cita=(Object[])list.get(i); 
-                            out.print("<tr>");
-                            ultimacita=cita[0].toString();
-                            out.print("<td>"+cita[0]+"</td>");
-                            out.print("</tr>");
-                        }
+            List list=SQL.sqlConsulta("call sp_ObtenerUltimaCita();"); 
+                if (list!=null) {
+                    for (int i = 0; i < list.size(); i++) {
+                        Object[] cita=(Object[])list.get(i); 
+                        ultimacita=cita[0].toString();
                     }
-                }catch(Exception e){
-                    System.out.println(e.getMessage().toString());
                 }
+            }catch(Exception e){
+                System.out.println(e.getMessage().toString());
+            }
             %>
         <h1>Registro de Pacientes</h1>
         <form>
@@ -61,10 +56,19 @@
                 </tr>
                 <tr>
                 <input type="hidden" name="codmed" value="<%=codmed%>" >
-                    <td><input type="submit" value="Enviar"></td>                    
+                <td><input type="submit" name="btnenviar" value="Enviar"></td>                    
                 </tr>
                 
             </table>
         </form>
+            
+        <%
+         if(request.getParameter("btnenviar")!=null){ 
+         
+         } 
+        %>        
+                
+                
+                
     </body>
 </html>
