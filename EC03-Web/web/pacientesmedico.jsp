@@ -46,7 +46,7 @@
                             out.print("<td>"+fila[2]+"</td>");
                             out.print("<td>"+fila[3]+"</td>");
                             out.print("<td>");
-                            out.print("<a href='/EC03-Web/pacientesmedico.jsp?codmed="+fila[0]+"'>");
+                            out.print("<a href='/EC03-Web/SCitas?codcita="+fila[0]+"'>");
                             out.print("Borrar");
                             out.print("</td>");
                             out.print("</tr>");
@@ -59,6 +59,6 @@
             </tbody>
         </table>
             
-        <h2>....... <a href="index.html">Retornar</a></h2>
+        <h2>....... <a href="/EC03-Web/listaespecialidades.jsp">Retornar</a></h2>
     </body>
 </html>

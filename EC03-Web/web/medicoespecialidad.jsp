@@ -55,6 +55,6 @@
             </tbody>
         </table>
             
-        <h2>....... <a href="index.html">Retornar</a></h2>
+        <h2>....... <a href="/EC03-Web/listaespecialidades.jsp">Retornar</a></h2>
     </body>
 </html>

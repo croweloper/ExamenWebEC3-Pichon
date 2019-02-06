@@ -70,6 +70,29 @@ delimiter ;
 call sp_ObtenerUltimaCita();
 
 
+/*
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+*/
+
+drop procedure if exists sp_ObtenerPrecioxEspecialidadMedico;
+delimiter &&
+create procedure sp_ObtenerPrecioxEspecialidadMedico(in p_codmed char(4))
+begin
+	select t.code,t.costo
+	from medicos m
+	inner join tabesp t
+	on m.codes=t.code
+	where codmed=p_codmed;
+
+
+end
+&&
+delimiter ;
+
+call sp_ObtenerPrecioxEspecialidadMedico('M001');
+
 
 
 
